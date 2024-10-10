@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header
+      style="
+        display: block;
+        text-align: center;
+        justify-content: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: larger;
+      "
+    >
+      <h4>NAME: OKEKE PRINCE PROSPER</h4>
+
+      <h4>REG NO.: 20211286122</h4>
+
+      <h4>DEPARTMENT: SOFTWARE ENGINEERING</h4>
+
+      <h4>COURSE CODE: CIT 306</h4>
+    </header>
+    <main>
+      <section
+        style="
+          display: flex;
+          justify-content: center;
+          border-radius: 20px;
+          padding: 20px;
+        "
+      >
+        <form
+          action="https://script.google.com/macros/s/AKfycbw5sPFCCJ7NeEamcZXAcY_Lm5zNgeyexJIRZ9jD2Y8Z65mVG0YJ5H__WIylKn5KiQND/exec"
+          method="post"
+          style="
+            display: flexbox;
+            justify-content: center;
+            text-align: center;
+            background-color: beige;
+            width: 80%;
+            padding: 10px;
+            border-radius: 20px;
+            font-weight: bold;
+          "
+        >
+          <label for="name">NAME</label> <br />
+          <input type="text" id="name" name="name" />
+          <br /><br />
+
+          <label for="dob">DATE OF BIRTH</label> <br />
+          <input type="date" id="dob" name="dob" />
+          <br /><br />
+
+          <label for="address">ADDRESS</label> <br />
+          <input type="text" id="address" name="address" />
+          <br /><br />
+
+          <label for="zip">ZIP CODE</label> <br />
+          <input type="number" id="zip" name="zip" />
+          <br /><br />
+
+          <label for="email">EMAIL</label> <br />
+          <input type="email" id="email" name="email" />
+          <br /><br />
+
+          <label for="phone">PHONE NUMBER</label> <br />
+          <input type="tel" id="phone" name="phone" />
+          <br /><br />
+
+          <label for="department">DEPARTMENT</label> <br />
+          <input type="text" id="department" name="department" />
+          <br /><br />
+
+          <label for="reg_number">REG. NUMBER</label> <br />
+          <input type="text" id="reg_number" name="reg_number" />
+          <br /><br />
+
+          <label for="level">LEVEL</label> <br />
+          <select id="level" name="level">
+            <option value="100">100 LEVEL</option>
+            <option value="200">200 LEVEL</option>
+            <option value="300">300 LEVEL</option>
+            <option value="400">400 LEVEL</option>
+            <option value="500">500 LEVEL</option>
+          </select>
+          <br /><br />
+
+          <label for="admission_year">YEAR OF ADMISSION</label> <br />
+          <input type="number" id="admission_year" name="admission_year" />
+          <br /><br />
+
+          <input type="submit" value="Submit" class="button" />
+        </form>
+      </section>
+    </main>
+    <style>
+      input {
+        display: flex;
+        height: 30px;
+        width: 95%;
+        margin: auto;
+        border-radius: 10px;
+      }
+      select {
+        display: flex;
+        align-self: center;
+        width: 70%;
+        height: 30px;
+        margin: auto;
+      }
+      .button {
+        width: fit-content;
+        border: solid 2px black;
+        font-weight: bold;
+      }
+    </style>
+  </body>
+</html>
