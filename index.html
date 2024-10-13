@@ -3,119 +3,233 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>CIT306_FORM</title>
+    <style>
+      body {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        text-align: center;
+        margin: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: beige;
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-weight: bold;
+      }
+      input,
+      select {
+        width: 90%;
+        height: 40px;
+        margin: 10px 0;
+        border-radius: 10px;
+        padding: 5px;
+        border: 1px solid #ccc;
+      }
+      input::placeholder {
+        color: #888;
+      }
+      select {
+        padding: 0 10px;
+      }
+      .button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .button:hover {
+        background-color: #45a049;
+      }
+      #successMessage {
+        display: none;
+        text-align: center;
+        color: green;
+        margin-top: 20px;
+      }
+      .action-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      @media (max-width: 768px) {
+        form {
+          width: 95%;
+        }
+      }
+    </style>
   </head>
   <body>
-    <header
-      style="
-        display: block;
-        text-align: center;
-        justify-content: center;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: larger;
-      "
-    >
+    <header>
       <h4>NAME: OKEKE PRINCE PROSPER</h4>
-
       <h4>REG NO.: 20211286122</h4>
-
       <h4>DEPARTMENT: SOFTWARE ENGINEERING</h4>
-
       <h4>COURSE CODE: CIT 306</h4>
     </header>
     <main>
-      <section
-        style="
-          display: flex;
-          justify-content: center;
-          border-radius: 20px;
-          padding: 20px;
-        "
-      >
+      <div id="successMessage">
+        <p>Submitted successfully!</p>
+        <div class="action-buttons">
+          <button class="button" onclick="viewSpreadsheet()">
+            View Spreadsheet
+          </button>
+          <button class="button" onclick="downloadData()">Download Data</button>
+          <button class="button" onclick="fillFormAgain()">
+            Fill Form Again
+          </button>
+        </div>
+      </div>
+      <section>
         <form
+          id="myForm"
           action="https://script.google.com/macros/s/AKfycbw5sPFCCJ7NeEamcZXAcY_Lm5zNgeyexJIRZ9jD2Y8Z65mVG0YJ5H__WIylKn5KiQND/exec"
           method="post"
-          style="
-            display: flexbox;
-            justify-content: center;
-            text-align: center;
-            background-color: beige;
-            width: 80%;
-            padding: 10px;
-            border-radius: 20px;
-            font-weight: bold;
-          "
         >
-          <label for="name">NAME</label> <br />
-          <input type="text" id="name" name="name" />
-          <br /><br />
+          <label for="name">NAME</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your full name"
+            required
+          />
 
-          <label for="dob">DATE OF BIRTH</label> <br />
-          <input type="date" id="dob" name="dob" />
-          <br /><br />
+          <label for="dob">DOB</label>
+          <input type="date" id="dob" name="dob" required />
 
-          <label for="address">ADDRESS</label> <br />
-          <input type="text" id="address" name="address" />
-          <br /><br />
+          <label for="address">ADDRESS</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            placeholder="Enter your address"
+            required
+          />
 
-          <label for="zip">ZIP CODE</label> <br />
-          <input type="number" id="zip" name="zip" />
-          <br /><br />
+          <label for="zip">ZIP CODE</label>
+          <input
+            type="number"
+            id="zip"
+            name="zip"
+            placeholder="Enter your ZIP code"
+            required
+          />
 
-          <label for="email">EMAIL</label> <br />
-          <input type="email" id="email" name="email" />
-          <br /><br />
+          <label for="email">EMAIL</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
 
-          <label for="phone">PHONE NUMBER</label> <br />
-          <input type="tel" id="phone" name="phone" />
-          <br /><br />
+          <label for="phone">PHONE NUMBER</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Enter your phone number"
+            required
+          />
 
-          <label for="department">DEPARTMENT</label> <br />
-          <input type="text" id="department" name="department" />
-          <br /><br />
+          <label for="department">DEPARTMENT</label>
+          <input
+            type="text"
+            id="department"
+            name="department"
+            placeholder="Enter your department"
+            required
+          />
 
-          <label for="reg_number">REG. NUMBER</label> <br />
-          <input type="text" id="reg_number" name="reg_number" />
-          <br /><br />
+          <label for="reg_number">REG. NUMBER</label>
+          <input
+            type="number"
+            id="reg_number"
+            name="reg_number"
+            placeholder="Enter your registration number"
+            required
+          />
 
-          <label for="level">LEVEL</label> <br />
-          <select id="level" name="level">
+          <label for="level">LEVEL</label>
+          <select id="level" name="level" required>
+            <option value="">Select Level</option>
             <option value="100">100 LEVEL</option>
             <option value="200">200 LEVEL</option>
             <option value="300">300 LEVEL</option>
             <option value="400">400 LEVEL</option>
             <option value="500">500 LEVEL</option>
           </select>
-          <br /><br />
 
-          <label for="admission_year">YEAR OF ADMISSION</label> <br />
-          <input type="number" id="admission_year" name="admission_year" />
-          <br /><br />
+          <label for="admission_year">YEAR OF ADMISSION</label>
+          <input
+            type="number"
+            id="admission_year"
+            name="admission_year"
+            placeholder="Enter your admission year"
+            required
+          />
 
           <input type="submit" value="Submit" class="button" />
         </form>
       </section>
     </main>
-    <style>
-      input {
-        display: flex;
-        height: 30px;
-        width: 95%;
-        margin: auto;
-        border-radius: 10px;
+
+    <script>
+      document.getElementById("myForm").onsubmit = function (event) {
+        event.preventDefault();
+
+        // Submit form data using AJAX
+        const formData = new FormData(this);
+        fetch(this.action, {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => {
+            if (response.ok) {
+              document.getElementById("successMessage").style.display = "block";
+              document.getElementById("myForm").reset();
+            } else {
+              alert("Form submission failed. Please try again.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("There was an error submitting the form.");
+          });
+      };
+
+      function viewSpreadsheet() {
+        window.open(
+          "https://docs.google.com/spreadsheets/d/1vSnzT-uRh2IzewEcZDC_XsXEd9Nog9h_OFDO6foFMME/edit?usp=sharing",
+          "_blank"
+        );
       }
-      select {
-        display: flex;
-        align-self: center;
-        width: 70%;
-        height: 30px;
-        margin: auto;
+
+      function downloadData() {
+        window.open(
+          "https://docs.google.com/spreadsheets/d/e/2PACX-1vSL9eKQoRoBkrqY7WDiB5prHBmuIBqrZ2DuDJg7hz022nPzYmbgIO-vA05KX6czKjemoK3BLSqJ8pyH/pub?output=xlsx",
+          "_blank"
+        );
       }
-      .button {
-        width: fit-content;
-        border: solid 2px black;
-        font-weight: bold;
+
+      function fillFormAgain() {
+        document.getElementById("successMessage").style.display = "none";
+        document.getElementById("myForm").reset();
       }
-    </style>
+    </script>
   </body>
 </html>
